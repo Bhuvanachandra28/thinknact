@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -14,6 +15,10 @@
       background-color: #000;
       color: white;
     }
+    html {
+  scroll-behavior: smooth;
+}
+
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -457,34 +462,35 @@
     </div>
   </section>
 
-  <!-- <section id="think-board">
-    <h2>Think Board</h2>
-    <div class="board">
-      <div class="board-card">
-        <h3>Smart Agriculture Drone</h3>
-        <p>Designed to monitor crop health and spray nutrients with precision using AI-based navigation.</p>
-      </div>
-      <div class="board-card">
-        <h3>Green Concrete</h3>
-        <p>Eco-friendly construction material using recycled aggregates and industrial waste byproducts.</p>
-      </div>
-      <div class="board-card">
-        <h3>Auto Health Tracker</h3>
-        <p>Wearable device that constantly monitors vitals and integrates with mobile healthcare platforms.</p>
-      </div>
-    </div>
-    <div class="explore-button">
-      <a href="#">Explore Now</a>
-    </div>
-  </section> -->
-
   <section id="early-access">
     <h2>Get Early Access</h2>
-    <form action="https://forms.gle/YOUR_GOOGLE_FORM_LINK" method="POST">
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit" id="submitBtn">Notify Me</button>
-    </form>
-  </section>
+    <form id="contact-form">
+        <input type="email" name="user_email" id="userEmail" placeholder="Enter your email" required />
+        <button type="submit" id="submitBtn">Notify Me</button>
+      </form>
+      
+      <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+      <script>
+        (function () {
+          emailjs.init("wvHPOJHZNERTuuAxU"); // ✅ Your public key
+        })();
+      
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+          event.preventDefault();
+      
+          emailjs.sendForm('service_qy97or1', 'template_8ygg5v7', this) // ✅ Use correct template ID here
+            .then(function (response) {
+              console.log("Email sent!", response);
+              alert("Thanks for joining! We'll keep you updated.");
+              document.getElementById("contact-form").reset();
+            }, function (error) {
+              console.error("Email failed to send", error);
+              alert("Oops! Something went wrong. Please try again.");
+            });
+        });
+      </script>
+      
+  
 
   <div class="launch-area">
     <img src="3d-rocket.png" alt="Rocket" class="rocket" id="rocket" />
