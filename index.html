@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Think & Act</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: white;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #000;
+    }
+
+.logo-img {
+  height: 200px; /* Adjust based on your preference */
+  object-fit: contain;
+}
+
+.logo-wrapper {
+  position: absolute;
+  top: 0.1rem;
+  left: 0rem;
+  z-index: 10;
+}
+
+.main-logo {
+  height: 150px;
+  width: auto;
+}
+
+
+    .navbar .nav-links a {
+      margin-left: 1.5rem;
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .navbar .nav-links a:hover {
+      color: white;
+    }
+    header {
+      text-align: center;
+      padding: 8rem 2rem 5rem;
+      background: linear-gradient(180deg, #000 0%, #111 100%);
+    }
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 0 0 1rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cta-buttons a {
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .cta-buttons .primary {
+      background-color: #1d4ed8;
+      color: white;
+    }
+    .cta-buttons .primary:hover {
+      background-color: #2563eb;
+    }
+    .cta-buttons .secondary {
+      border: 1px solid #555;
+      color: #ccc;
+    }
+    .cta-buttons .secondary:hover {
+      background-color: #222;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .mission {
+      font-size: 1.1rem;
+      color: #aaa;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+    .founders {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .founder {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      width: 200px;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+    .founder img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 2px solid #1d4ed8;
+    }
+    .founder h3 {
+      margin: 0.5rem 0 0.2rem;
+    }
+    .founder p {
+      color: #888;
+      margin: 0;
+    }
+    form {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    input[type="email"] {
+      padding: 0.75rem;
+      width: 300px;
+      border-radius: 6px;
+      border: none;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      background-color: #222;
+      color: white;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      background: #1d4ed8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      background-color: #0d0d0d;
+      color: #777;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .step {
+      background-color: #111;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+    .step h3 {
+      margin: 0 0 0.5rem;
+    }
+    .step p {
+      color: #aaa;
+      margin: 0;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .board-card {
+      background-color: #111;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+    }
+    .board-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+    .board-card p {
+      color: #aaa;
+    }
+    .explore-button {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .explore-button a {
+      text-decoration: none;
+      background-color: #1d4ed8;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .explore-button a:hover {
+      background-color: #2563eb;
+    }
+
+    .meteor-background {
+      position: fixed;
+      top: 250px; /* starts below the header */
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 250px);
+      z-index: -1;
+      overflow: hidden;
+      /* background: linear-gradient(to bottom right, #2b2b2b, #3d3d3d); */
+    }
+
+    .meteor {
+      position: absolute;
+      width: 2px;
+      height: 80px;
+      background: linear-gradient(transparent, rgba(255, 255, 255, 0.7));
+      animation: fall 3s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) translateX(0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) translateX(100px);
+        opacity: 0;
+      }
+    }
+
+    .meteor:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .meteor:nth-child(2) { left: 25%; animation-delay: 0.5s; }
+    .meteor:nth-child(3) { left: 40%; animation-delay: 1s; }
+    .meteor:nth-child(4) { left: 55%; animation-delay: 1.5s; }
+    .meteor:nth-child(5) { left: 70%; animation-delay: 2s; }
+    .meteor:nth-child(6) { left: 85%; animation-delay: 2.5s; }
+
+    .glow-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: #1e1e1e;
+  border: none;
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.glow-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+.glow-button:hover::before {
+  animation: light-sweep 0.75s ease-in-out;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+@keyframes light-sweep {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+/* Optional: Make button text wrap or stay centered in mobile */
+@media (max-width: 480px) {
+  .glow-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+  </style>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const howItWorksSection = document.getElementById('how-it-works');
+      
+      // Hide the section initially
+      howItWorksSection.style.display = 'none';
+  
+      // Check if the user is already registered
+      if (localStorage.getItem('registered') === 'true') {
+        howItWorksSection.style.display = 'block';
+      }
+  
+      // Handle form submission
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function () {
+        // Save registration flag in local storage
+        localStorage.setItem('registered', 'true');
+        // Show the section after submission
+        howItWorksSection.style.display = 'block';
+      });
+    });
+  </script>
+  
+<body>
+
+  <div class="navbar">
+    <div class="logo-wrapper">
+        <img src="logooo.png" alt="Think & Act Logo" class="main-logo" />
+      </div>
+
+      
+    <div class="nav-links">
+      <!-- <a href="#mission">Mission</a> -->
+      <!-- <a href="#early-access">Join</a> -->
+    </div>
+  </div>
+  <div class="meteor-section">
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+  </div>
+  <header>
+    <h1>Innovate, Connect, Succeed</h1>
+    <p>Share your big ideas, find your dream team, and catch the eye of investors. Let’s make things happen together!</p>
+    <div class="cta-buttons">
+      <a href="#early-access" class="glow-button">Join now</a>
+      <a href="#mission" class="secondary">Learn more</a>
+    </div>
+  </header>
+  <!-- Meteor Background Section
+  <div class="meteor-background">
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+  </div> -->
+
+
+  <section id="mission">
+    <h2>Our Mission</h2>
+    <p class="mission">
+      At Think & Act, we’re on a mission to transform India into a global hub of creativity and innovation. We empower changemakers, connect brilliant minds, and foster an ecosystem where dreams are nurtured from spark to success. Join us in redefining what's possible.
+    </p>
+  </section>
+
+  <section>
+    <h2>Meet the Founders</h2>
+    <div class="founders">
+      <div class="founder">
+        <img src="C:\Users\bchan\OneDrive\Desktop\startSITE\bhuvana.jpeg" alt="Bhuvana">
+        <h3>Bhuvana</h3>
+        <p>Visionary & Leader</p>
+      </div>
+      <div class="founder">
+        <img src="https://via.placeholder.com/100" alt="Kumar G">
+        <h3>Kumar G</h3>
+        <p>Tech Guru</p>
+      </div>
+      <div class="founder">
+        <img src="https://via.placeholder.com/100" alt="Kalyan">
+        <h3>Kalyan</h3>
+        <p>Operations Whiz</p>
+      </div>
+      <div class="founder">
+        <img src="https://via.placeholder.com/100" alt="Anuj">
+        <h3>Anuj</h3>
+        <p>Marketing Maven</p>
+      </div>
+      <div class="founder">
+        <img src="https://via.placeholder.com/100" alt="Krish">
+        <h3>Krish</h3>
+        <p>Finance Wizard</p>
+      </div>
+      <div class="founder">
+        <img src="https://via.placeholder.com/100" alt="Kumar Sai">
+        <h3>Kumar Sai</h3>
+        <p>Sales Strategist</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Share Your Idea</h3>
+        <p>Submit your innovative idea and categorize it by domain — whether it's software, mechanical, agriculture, or more.</p>
+      </div>
+      <div class="step">
+        <h3>2. Get It Reviewed</h3>
+        <p>Our team and community validate and provide feedback to shape your concept into something impactful.</p>
+      </div>
+      <div class="step">
+        <h3>3. Find Your Team</h3>
+        <p>Connect with like-minded collaborators who share your vision and want to work with you on your idea.</p>
+      </div>
+      <div class="step">
+        <h3>4. Impress Investors</h3>
+        <p>Promising ideas get visibility among potential investors and mentors looking to fund and guide innovative solutions.</p>
+      </div>
+      <div class="step">
+        <h3>5. Get Legal Backing</h3>
+        <p>If your idea shows potential, we’ll help you with provisional patent filing and ownership protection.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section id="think-board">
+    <h2>Think Board</h2>
+    <div class="board">
+      <div class="board-card">
+        <h3>Smart Agriculture Drone</h3>
+        <p>Designed to monitor crop health and spray nutrients with precision using AI-based navigation.</p>
+      </div>
+      <div class="board-card">
+        <h3>Green Concrete</h3>
+        <p>Eco-friendly construction material using recycled aggregates and industrial waste byproducts.</p>
+      </div>
+      <div class="board-card">
+        <h3>Auto Health Tracker</h3>
+        <p>Wearable device that constantly monitors vitals and integrates with mobile healthcare platforms.</p>
+      </div>
+    </div>
+    <div class="explore-button">
+      <a href="#">Explore Now</a>
+    </div>
+  </section> -->
+
+  <section id="early-access">
+    <h2>Get Early Access</h2>
+    <form action="https://forms.gle/YOUR_GOOGLE_FORM_LINK" method="POST">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit" id="submitBtn">Notify Me</button>
+    </form>
+  </section>
+
+  <div class="launch-area">
+    <img src="3d-rocket.png" alt="Rocket" class="rocket" id="rocket" />
+  </div>
+
+  <script>
+    document.getElementById("submitBtn").addEventListener("click", function () {
+      const rocket = document.getElementById("rocket");
+      rocket.classList.add("launch");
+
+      // Reset after 3 seconds
+      setTimeout(() => {
+        rocket.classList.remove("launch");
+      }, 3000);
+    });
+  </script>
+
+  <footer>
+    &copy; 2025 Think & Act — "Think Big, Act Bold" — Built with passion in India 🇮🇳
+  </footer>
+</body>
+</html>
