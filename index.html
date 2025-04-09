@@ -14,6 +14,8 @@
       font-family: 'Inter', sans-serif;
       background-color: #000;
       color: white;
+      display: flex;
+  flex-direction: column;
     }
     html {
   scroll-behavior: smooth;
@@ -56,7 +58,7 @@
     }
     header {
       text-align: center;
-      padding: 10rem 2rem 5rem;
+      padding: 10rem 2rem 7rem;
       background: linear-gradient(180deg, #000 0%, #111 100%);
     }
     header h1 {
@@ -146,7 +148,7 @@
     }
     form {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
     input[type="email"] {
       padding: 0.75rem;
@@ -169,6 +171,7 @@
     }
     footer {
       text-align: center;
+      
       padding: 2rem 1rem;
       font-size: 0.9rem;
       background-color: #0d0d0d;
@@ -328,6 +331,10 @@
   }
 }
 
+.wrapper {
+  flex: 1;
+}
+
   </style>
 </head>
 <script>
@@ -354,7 +361,7 @@
   </script>
   
 <body>
-
+<div class="wrapper">
   <div class="navbar">
     <div class="logo-wrapper">
         <img src="logooo.png" alt="Think & Act Logo" class="main-logo" />
@@ -492,22 +499,34 @@
       
   
 
+ 
+  </div>
   <div class="launch-area">
     <img src="3d-rocket.png" alt="Rocket" class="rocket" id="rocket" />
   </div>
 
   <script>
-    document.getElementById("submitBtn").addEventListener("click", function () {
+    document.getElementById("submitBtn").addEventListener("click", function (event) {
+      const emailInput = document.getElementById("userEmail");
       const rocket = document.getElementById("rocket");
-      rocket.classList.add("launch");
-
-      // Reset after 3 seconds
-      setTimeout(() => {
-        rocket.classList.remove("launch");
-      }, 3000);
+  
+      // Check if the input is not empty and is a valid email format
+      if (emailInput.value.trim() !== "" && emailInput.checkValidity()) {
+        // Trigger rocket launch
+        rocket.classList.add("launch");
+  
+        // Reset animation after 3 seconds
+        setTimeout(() => {
+          rocket.classList.remove("launch");
+        }, 3000);
+      } else {
+        // Prevent form submission and alert
+        event.preventDefault();
+        alert("Please enter a valid email before launching the rocket!");
+      }
     });
   </script>
-
+  
   <footer>
     &copy; 2025 Think & Act — "Think Big, Act Bold" — Built with passion in India 🇮🇳
   </footer>
